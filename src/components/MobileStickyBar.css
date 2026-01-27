@@ -1,0 +1,39 @@
+.mobile-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--mobile-bar-height);
+    background-color: var(--color-void);
+    display: flex;
+    border-top: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.sticky-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-silver);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    border-right: 1px solid var(--border-color);
+    transition: background-color 0.2s;
+}
+
+.sticky-btn:last-child {
+    border-right: none;
+}
+
+.btn-book {
+    background-color: var(--color-deep);
+    color: white;
+}
+
+@media (min-width: 1024px) {
+    .mobile-sticky-bar {
+        display: none;
+    }
+}

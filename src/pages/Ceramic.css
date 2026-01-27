@@ -1,0 +1,135 @@
+/* --- CERAMIC PAGE STYLING --- */
+
+.ceramic-page {
+    background-color: var(--color-void);
+}
+
+/* 1. Hero Gloss Effect */
+.ceramic-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.gloss-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, transparent 50%, rgba(139, 92, 246, 0.05) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 2. Feature Grid */
+.feature-card {
+    background-color: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 3rem 2rem;
+    transition: var(--transition-smooth);
+}
+
+.feature-card:hover {
+    border-color: var(--color-electric);
+    transform: translateY(-5px);
+}
+
+/* 3. Process Steps */
+.process-step {
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.process-step::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 40px;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--color-electric), transparent);
+}
+
+.process-step:last-child::before {
+    display: none;
+}
+
+.step-num {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-void);
+    border: 1px solid var(--color-electric);
+    color: var(--color-electric);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 0.8rem;
+    z-index: 10;
+    position: relative;
+    margin-right: 2rem;
+}
+
+/* 4. Tier Comparison */
+.pricing-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.tier-card {
+    background-color: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+}
+
+.tier-card h3 {
+    color: #8B5CF6;
+    font-weight: 800;
+}
+
+.tier-card.featured {
+    border-color: var(--color-electric);
+    position: relative;
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.05) 0%, transparent 100%);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-electric);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+
+/* 5. FAQ Accordion */
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem 0;
+}
+
+.faq-question {
+    color: var(--color-white);
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.faq-answer {
+    color: var(--color-silver);
+    line-height: 1.6;
+}

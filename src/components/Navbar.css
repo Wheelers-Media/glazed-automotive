@@ -1,0 +1,229 @@
+/* Navbar Base */
+.navbar {
+    height: var(--header-height);
+    background-color: rgba(5, 5, 5, 0.95);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+}
+
+.navbar-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white;
+    letter-spacing: -0.02em;
+    font-style: italic;
+    text-transform: uppercase;
+    z-index: 1002;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.logo-primary {
+    color: var(--color-electric);
+    font-weight: 700;
+}
+
+.logo-secondary {
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 1.5rem;
+    /* CHANGED from 0.75rem to match .logo */
+    letter-spacing: -0.02em;
+    /* Tighten tracking to match Glazed */
+    margin-left: 6px;
+    /* Adds a tiny breathing room */
+}
+
+@media (max-width: 640px) {
+
+    /* 1. FORCE the text to appear, but remove the extra margin */
+    .logo-secondary {
+        display: block !important;
+        margin-left: 0px !important;
+        /* Changed from 4px to 0px */
+    }
+
+    /* 2. Shrink BOTH parts to fit */
+    /* 0.75rem (12px) prevents the text from breaking into two lines on small phones */
+    .logo-primary,
+    .logo-secondary {
+        font-size: 1.25rem !important;
+        line-height: 1;
+    }
+
+    /* 3. Tighten the gap to ZERO to match desktop */
+    .logo {
+        gap: 4px !important;
+        /* Changed from 4px to 0px */
+    }
+}
+
+/* Desktop Nav */
+.desktop-nav {
+    display: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+.desktop-nav a:not(.btn) {
+    font-weight: 600;
+    color: var(--color-silver);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+/* Hover & Active States */
+.desktop-nav a:not(.btn):hover {
+    color: var(--color-white);
+    border-bottom-color: rgba(139, 92, 246, 0.5);
+    /* Electric violet dim */
+}
+
+.desktop-nav a.active:not(.btn) {
+    color: var(--color-white);
+    border-bottom-color: var(--color-electric);
+    text-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
+
+.btn-sm {
+    padding: 0.5rem 1.5rem;
+    min-height: 40px;
+    font-size: 0.85rem;
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    padding: 0;
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Overlay */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-void);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    z-index: 1001;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.overlay-content {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+.overlay-link {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-silver);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    transition: color 0.2s;
+}
+
+.overlay-link.active,
+.overlay-link:hover {
+    color: var(--color-white);
+}
+
+.overlay-actions {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.overlay-contact-info p {
+    color: var(--color-silver);
+    margin: 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.phone-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+/* Responsive */
+@media (min-width: 1024px) {
+    .desktop-nav {
+        display: flex;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .mobile-overlay {
+        display: none;
+    }
+}

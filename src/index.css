@@ -1,0 +1,246 @@
+@import "tailwindcss";
+
+:root {
+  /* --- GLAZED V3.0 BRAND TOKENS --- */
+
+  /* Colors */
+  --color-void: #050505;
+  /* Site background */
+  --color-card: #121212;
+  /* Interaction surfaces */
+  --color-deep: #4C1D95;
+  /* Primary action */
+  --color-electric: #8B5CF6;
+  /* Hover/Glow */
+  --color-silver: #D4D4D8;
+  /* Body text */
+  --color-white: #FFFFFF;
+  /* Headlines */
+
+  /* Borders - Slightly bumped contrast as requested */
+  --border-color: rgba(255, 255, 255, 0.12);
+  --border-radius: 2px;
+
+  /* Typography */
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing (Mobile First Clamps) */
+  --section-spacing: clamp(80px, 10vh, 120px);
+  --container-max: 1280px;
+  --header-height: 70px;
+  --mobile-bar-height: 70px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-main);
+  background-color: var(--color-void);
+  color: var(--color-silver);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-bottom: var(--mobile-bar-height);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Typography Base */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-white);
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 3rem);
+}
+
+.section {
+  padding: var(--section-spacing) 0;
+  position: relative;
+  /* Thin Divider */
+  border-top: 1px solid var(--border-color);
+}
+
+.section:first-of-type {
+  border-top: none;
+}
+
+.section-full {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Components */
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: var(--border-radius);
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  font-size: 0.95rem;
+  min-height: 48px;
+  letter-spacing: 0.05em;
+}
+
+.btn-primary {
+  background-color: var(--color-deep);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-electric);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+.btn-secondary,
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.btn-secondary:hover,
+.btn-outline:hover {
+  background-color: var(--color-white);
+  color: var(--color-void);
+  border-color: var(--color-white);
+}
+
+/* Cards - Enhanced Contrast & Subtle Gradient */
+.card {
+  background-color: var(--color-card);
+  /* Subtle top-to-bottom gradient for depth */
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid var(--border-color);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: var(--border-radius);
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-electric);
+  box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.2);
+}
+
+.bg-surface-container {
+  background-color: var(--color-card);
+  border: 1px solid var(--border-color);
+  padding: 4rem 2rem;
+  border-radius: var(--border-radius);
+}
+
+/* Text Utilities */
+.text-deep {
+  color: var(--color-deep);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-electric {
+  color: var(--color-electric);
+}
+
+.text-white {
+  color: var(--color-white);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+/* Responsive Grid Helper */
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.grid-cols-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile Visibility Utilities */
+.hidden-mobile-nav {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hidden-mobile-nav {
+    display: flex;
+  }
+}

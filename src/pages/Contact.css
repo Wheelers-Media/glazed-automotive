@@ -1,0 +1,182 @@
+/* --- CONTACT PAGE STYLING --- */
+
+.contact-page {
+    background-color: var(--color-void);
+}
+
+/* 1. Contact Header Grid */
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+@media (min-width: 768px) {
+    .contact-info-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.contact-info-card {
+    background-color: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.contact-info-card:hover {
+    border-color: var(--color-deep);
+}
+
+.contact-icon {
+    color: var(--color-electric);
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* 2. Global Form Styling */
+.booking-form {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-fieldset {
+    border: none;
+    padding: 3rem;
+    background-color: var(--color-surface);
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.fieldset-legend {
+    font-size: 0.65rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--color-electric);
+    background-color: #1a1a1a;
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 3. Inputs & Labels */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    background-color: #0c0c0c;
+    border: 1px solid #333;
+    color: var(--color-white);
+    padding: 1rem;
+    border-radius: 2px;
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    transition: var(--transition-fast);
+    outline: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--color-electric);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.15);
+}
+
+/* 4. Custom Radio & Checkbox Styling */
+.choice-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.choice-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--color-silver);
+}
+
+.choice-item input[type="radio"],
+.choice-item input[type="checkbox"] {
+    accent-color: var(--color-electric);
+    width: 18px;
+    height: 18px;
+}
+
+/* 5. File Upload Styling */
+.file-upload-wrapper {
+    border: 2px dashed #222;
+    padding: 2rem;
+    text-align: center;
+    background-color: #0c0c0c;
+    transition: var(--transition-fast);
+}
+
+.file-upload-wrapper:hover {
+    border-color: var(--color-deep);
+}
+
+/* 6. Legal / Consent */
+.consent-wrapper {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 1rem;
+}
+
+.consent-text {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--color-silver);
+}
+
+/* 7. Button Overrides */
+.btn-submit {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
