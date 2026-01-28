@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Fleet.css';
+import fleetHeroImg from '../assets/fleet.jpg';
 
 // --- INLINE SVG COMPONENTS (Standalone) ---
 
@@ -89,9 +90,19 @@ const Fleet = () => {
         <div className="fleet-page">
 
             {/* 1. Hero Section */}
-            <section className="fleet-hero min-h-[80vh] flex items-center pt-24 pb-16">
-                <div className="fleet-hero-overlay" />
-                <div className="container-tight px-6 relative z-10">
+            {/* 1. Hero Section */}
+            <section className="fleet-hero min-h-[80vh] flex items-center pt-24 pb-16 relative overflow-hidden">
+                {/* Background Image with Darkened Layers */}
+                <div className="absolute inset-0 z-0">
+                    <div className="absolute inset-0 bg-[#050505]/40 z-10" />
+                    <img
+                        src={fleetHeroImg}
+                        alt="Fleet Maintenance"
+                        className="w-full h-full object-cover lg:opacity-40"
+                    />
+                </div>
+
+                <div className="container-tight px-6 relative z-20">
                     <div className="max-w-3xl">
                         <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#4C1D95]/20 border border-[#4C1D95]/30 rounded-full mb-6 text-[#8B5CF6]">
                             <IconHardHat size={14} />

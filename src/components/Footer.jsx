@@ -71,7 +71,7 @@ const Footer = () => {
                     <div className="footer-brand">
 
                         {/* Brand Text - Gap set to 0px to match Desktop Header */}
-                        <div className="footer-brand-text" style={{ display: 'flex', alignItems: 'center', gap: '0px', marginBottom: '15px' }}>
+                        <div className="footer-brand-text" style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '15px' }}>
                             <span style={{ fontSize: '1.5rem', fontWeight: '900', fontStyle: 'italic', color: 'var(--color-electric)', letterSpacing: '-0.02em' }}>
                                 GLAZED
                             </span>

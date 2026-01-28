@@ -21,7 +21,7 @@ const ThankYou = () => {
                 <h1 className="thank-you-title italic">REQUEST RECEIVED.</h1>
 
                 <p className="thank-you-subhead">
-                    We have received your booking details. Casey or the team will confirm your appointment via text shortly.
+                    We have received your booking details. Casey or the team will confirm your appointment via text/call shortly.
                 </p>
 
                 <div className="thank-you-actions">
@@ -30,12 +30,12 @@ const ThankYou = () => {
                     </Link>
 
                     <a
-                        href="https://communityvotes.com"
+                        href="https://grandeprairie.communityvotes.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="nominate-link"
                     >
-                        Nominate us for CommunityVotes →
+                        Nominate us for Grande Prairie's CommunityVotes →
                     </a>
                 </div>
             </div>

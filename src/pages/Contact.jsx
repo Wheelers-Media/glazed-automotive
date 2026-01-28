@@ -62,7 +62,7 @@ const Contact = () => {
                         <div className="contact-info-card">
                             <div className="contact-icon"><IconMapPin size={32} /></div>
                             <h4 className="text-white text-sm mb-2">SERVICE AREA</h4>
-                            <p className="text-xl font-bold">Grande Prairie & Area</p>
+                            <p className="text-xl font-bold">Grande Prairie, AB & Area</p>
                         </div>
                         <div className="contact-info-card">
                             <div className="contact-icon"><IconClock size={32} /></div>

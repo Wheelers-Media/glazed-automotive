@@ -63,7 +63,7 @@ const Ceramic = () => {
                 <div className="gloss-overlay" />
                 {/* Background Image Placeholder with Darkened Layers */}
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-[#050505]/60 z-10" />
+                    <div className="absolute inset-0 bg-[#050505]/80 z-10" />
                     <img
                         src={ceramicHeroImg}
                         alt="Glossy Paint"
@@ -265,7 +265,7 @@ const Ceramic = () => {
                             { q: "Is there a warranty on these coatings?", a: "Yes. Our Guardian (Silver) and Fortress (Gold) packages come with performance warranties provided the vehicle is maintained according to our provided aftercare guide." }
                         ].map((faq, idx) => (
                             <div key={idx} className="faq-item">
-                                <div className="faq-question">{faq.q}</div>
+                                <div className="faq-question text-[#8B5CF6]">{faq.q}</div>
                                 <p className="faq-answer">{faq.a}</p>
                             </div>
                         ))}
