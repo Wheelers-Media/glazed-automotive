@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './Contact.css';
 
@@ -33,6 +34,15 @@ const IconUpload = ({ size = 24 }) => (
 );
 
 const Contact = () => {
+    const navigate = useNavigate();
+
+    const handleSubmit = () => {
+        // Form POSTs silently to Zoho via hiddenFrame.
+        // We redirect the user ourselves so they never see Zoho's page.
+        setTimeout(() => {
+            navigate('/thank-you');
+        }, 800);
+    };
 
     return (
         <div className="contact-page">
@@ -84,10 +94,12 @@ const Contact = () => {
                         acceptCharset="UTF-8"
                         encType="multipart/form-data"
                         className="booking-form"
+                        target="hiddenFrame"
+                        onSubmit={handleSubmit}
                     >
                         {/* Hidden Fields for Zoho */}
                         <input type="hidden" name="zf_referrer_name" value="" />
-                        <input type="hidden" name="zf_redirect_url" value="https://glazeddetails.ca/thank-you" />
+                        <input type="hidden" name="zf_redirect_url" value="" />
                         <input type="hidden" name="zc_gad" value="" />
 
                         {/* --- Fieldset: Identity --- */}
@@ -358,6 +370,9 @@ const Contact = () => {
                             SUBMIT BOOKING REQUEST
                         </button>
                     </form>
+
+                    {/* Hidden iframe absorbs Zoho's response — user is redirected by JS */}
+                    <iframe name="hiddenFrame" style={{ display: 'none' }}></iframe>
 
 
                 </div>
