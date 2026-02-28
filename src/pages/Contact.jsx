@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+
 import './Contact.css';
 
 // --- INLINE SVG COMPONENTS (Standalone) ---
@@ -33,16 +33,6 @@ const IconUpload = ({ size = 24 }) => (
 );
 
 const Contact = () => {
-    const navigate = useNavigate();
-    const [submitted, setSubmitted] = React.useState(false);
-
-    const handleSubmit = () => {
-        setSubmitted(true);
-        // Wait for the form to submit to the iframe, then redirect
-        setTimeout(() => {
-            navigate('/thank-you');
-        }, 1000);
-    };
 
     return (
         <div className="contact-page">
@@ -94,12 +84,10 @@ const Contact = () => {
                         acceptCharset="UTF-8"
                         encType="multipart/form-data"
                         className="booking-form"
-                        target="hiddenFrame"
-                        onSubmit={handleSubmit}
                     >
                         {/* Hidden Fields for Zoho */}
                         <input type="hidden" name="zf_referrer_name" value="" />
-                        <input type="hidden" name="zf_redirect_url" value="" />
+                        <input type="hidden" name="zf_redirect_url" value="https://glazeddetails.ca/thank-you" />
                         <input type="hidden" name="zc_gad" value="" />
 
                         {/* --- Fieldset: Identity --- */}
@@ -371,8 +359,7 @@ const Contact = () => {
                         </button>
                     </form>
 
-                    {/* Hidden iframe for form submission target */}
-                    <iframe name="hiddenFrame" style={{ display: 'none' }}></iframe>
+
                 </div>
             </section>
 
