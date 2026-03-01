@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './Ceramic.css';
 // Import the video file from the assets folder
-import ceramicVideo from '../assets/ceramic.mp4';
-import ceramicHeroImg from '../assets/ceramic-hero.jpg';
+import ceramicVideo from '../assets/ceramic-coating-process-grande-prairie.mp4';
+import ceramicHeroImg from '../assets/premium-ceramic-coating-grande-prairie.jpg';
 
 // --- INLINE SVG COMPONENTS ---
 
@@ -58,6 +59,12 @@ const Ceramic = () => {
     return (
         <div className="ceramic-page">
 
+            <Helmet>
+                <title>Ceramic Coating Grande Prairie | Permanent Protection | Glazed Auto</title>
+                <meta name="description" content="Professional ceramic coating in Grande Prairie. 1, 3 & 5-year packages with full paint correction. Protect your vehicle from Alberta's harsh elements. Book a consultation." />
+                <link rel="canonical" href="https://glazeddetails.ca/ceramic" />
+            </Helmet>
+
             {/* 1. Hero Section */}
             <section className="ceramic-hero min-h-[90vh] flex items-center justify-center pt-24 pb-16 relative">
                 <div className="gloss-overlay" />
@@ -66,7 +73,7 @@ const Ceramic = () => {
                     <div className="absolute inset-0 bg-[#050505]/80 z-10" />
                     <img
                         src={ceramicHeroImg}
-                        alt="Glossy Paint"
+                        alt="Ceramic coating application on glossy paint in Grande Prairie, Alberta"
                         className="w-full h-full object-cover lg:grayscale lg:opacity-40"
                     />
                 </div>

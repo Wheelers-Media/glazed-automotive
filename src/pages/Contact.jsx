@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { Helmet } from 'react-helmet-async';
 import './Contact.css';
 
 // --- INLINE SVG COMPONENTS (Standalone) ---
@@ -46,6 +46,12 @@ const Contact = () => {
 
     return (
         <div className="contact-page">
+
+            <Helmet>
+                <title>Book Mobile Detailing in Grande Prairie | Glazed Automotive Details</title>
+                <meta name="description" content="Book your mobile auto detailing appointment in Grande Prairie. Fill out our quick form and we'll come to your home or office. Interior, exterior, ceramic coating &amp; fleet services." />
+                <link rel="canonical" href="https://glazeddetails.ca/contact" />
+            </Helmet>
 
             {/* 1. Header Section */}
             <section className="pt-32 pb-16 bg-[#050505]">

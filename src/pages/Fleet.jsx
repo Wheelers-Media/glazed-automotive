@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './Fleet.css';
-import fleetHeroImg from '../assets/fleet.jpg';
+import fleetHeroImg from '../assets/commercial-fleet-washing-oilfield-grande-prairie.jpg';
 
 // --- INLINE SVG COMPONENTS (Standalone) ---
 
@@ -89,6 +90,12 @@ const Fleet = () => {
     return (
         <div className="fleet-page">
 
+            <Helmet>
+                <title>Commercial Fleet Washing &amp; Detailing Grande Prairie | Glazed Auto</title>
+                <meta name="description" content="Mobile fleet washing and detailing for oilfield and commercial trucks in Grande Prairie and the Peace Region. WCB cleared, GPS verified, night-shift capable. Get a custom fleet proposal." />
+                <link rel="canonical" href="https://glazeddetails.ca/fleet" />
+            </Helmet>
+
             {/* 1. Hero Section */}
             {/* 1. Hero Section */}
             <section className="fleet-hero min-h-[80vh] flex items-center pt-24 pb-16 relative overflow-hidden">
@@ -97,7 +104,7 @@ const Fleet = () => {
                     <div className="absolute inset-0 bg-[#050505]/40 z-10" />
                     <img
                         src={fleetHeroImg}
-                        alt="Fleet Maintenance"
+                        alt="Commercial fleet truck washing service in Grande Prairie oilfield"
                         className="w-full h-full object-cover lg:opacity-40"
                     />
                 </div>

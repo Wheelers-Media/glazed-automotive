@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import './Services.css';
 
 // --- INLINE SVG COMPONENTS (Standalone) ---
@@ -48,6 +49,12 @@ const IconShieldCheck = ({ size = 24, className }) => (
 const Services = () => {
     return (
         <div className="services-page">
+
+            <Helmet>
+                <title>Auto Detailing Services &amp; Pricing Grande Prairie | Glazed Auto</title>
+                <meta name="description" content="Transparent pricing for mobile auto detailing in Grande Prairie. Interior, exterior, ceramic coating, and fleet packages. Book online or call 780-655-6748." />
+                <link rel="canonical" href="https://glazeddetails.ca/services" />
+            </Helmet>
 
             {/* 1. Header Section */}
             <section className="pt-32 pb-16 bg-[#050505]">

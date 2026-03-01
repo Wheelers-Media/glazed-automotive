@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './Home.css';
-import ceramicImg from "../assets/ceramic.jpg";
-import project1Img from '../assets/before-after.webp';
-import project1Img2 from '../assets/before-after2.png';
-import project1Img3 from '../assets/before-after3.png';
-import project1Img4 from '../assets/before-after4.png';
-import heroVideo from '../assets/hero-video.mp4';
-import mobileUnitImg from '../assets/we-bring-the-shop-to-you.jpg';
+import ceramicImg from "../assets/ceramic-coating-grande-prairie.jpg";
+import project1Img from '../assets/mobile-detailing-grande-prairie-before-after.webp';
+import project1Img2 from '../assets/auto-detailing-interior-grande-prairie.png';
+import project1Img3 from '../assets/car-detailing-peace-region.png';
+import project1Img4 from '../assets/truck-polishing-grande-prairie.png';
+import heroVideo from '../assets/mobile-detailing-grande-prairie-hero.mp4';
+import mobileUnitImg from '../assets/mobile-auto-detailing-unit-grande-prairie.jpg';
 
 // --- INLINE SVG COMPONENTS (Standalone Replacements for Lucide) ---
 
@@ -73,6 +74,12 @@ const Home = () => {
   return (
     <div className="home-page overflow-x-hidden">
 
+      <Helmet>
+        <title>Glazed Automotive Details | #1 Mobile Detailing Grande Prairie</title>
+        <meta name="description" content="Grande Prairie's #1 mobile auto detailing service. We come to you — ceramic coating, deep interior cleaning, and fleet washing anywhere in the Peace Region. Book online today." />
+        <link rel="canonical" href="https://glazeddetails.ca/" />
+      </Helmet>
+
       {/* 1. Cinematic Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center pt-24 pb-16">
         {/* Background Layer */}
@@ -99,7 +106,8 @@ const Home = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black italic tracking-tighter mb-6 leading-[0.9]">
-            PREMIUM MOBILE <br />
+            <span className="block text-xl md:text-2xl text-gray-400 uppercase tracking-widest font-bold mb-4 not-italic">Grande Prairie's Premier</span>
+            MOBILE <br />
             <span className="text-[#8B5CF6]">DETAILING.</span>
           </h1>
 
@@ -203,7 +211,7 @@ const Home = () => {
               <div className="aspect-square bg-[#121212] flex items-center justify-center border border-gray-800 relative overflow-hidden group">
                 <img
                   className="w-full h-full object-cover lg:grayscale lg:opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
-                  alt="Ceramic Coating"
+                  alt="Ceramic coating application on luxury vehicle in the Peace Region"
                   src={ceramicImg}
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#8B5CF6]/20 to-transparent pointer-events-none" />
@@ -239,7 +247,7 @@ const Home = () => {
               <div className="aspect-video bg-[#121212] border border-gray-800 overflow-hidden group">
                 <img
                   src={mobileUnitImg}
-                  alt="Mobile Detailing Unit"
+                  alt="Mobile detailing unit providing service at client home in Grande Prairie"
                   className="w-full h-full object-cover lg:grayscale lg:opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
                 />
               </div>
@@ -263,7 +271,7 @@ const Home = () => {
             <div className="aspect-square bg-[#121212] border border-gray-800 hover:border-[#8B5CF6] transition-all overflow-hidden group">
               <img
                 src={project1Img}
-                alt="Before and After Detail"
+                alt="Mobile detailing before and after dirty truck in Grande Prairie"
                 className="w-full h-full object-cover lg:grayscale lg:opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
               />
             </div>
@@ -272,7 +280,7 @@ const Home = () => {
             <div className="aspect-square bg-[#121212] border border-gray-800 hover:border-[#8B5CF6] transition-all overflow-hidden group">
               <img
                 src={project1Img2}
-                alt="Before and After Detail"
+                alt="Interior auto detailing on a daily driver in Grande Prairie"
                 className="w-full h-full object-cover lg:grayscale lg:opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
               />
             </div>
@@ -281,7 +289,7 @@ const Home = () => {
             <div className="aspect-square bg-[#121212] border border-gray-800 hover:border-[#8B5CF6] transition-all overflow-hidden group">
               <img
                 src={project1Img3}
-                alt="Before and After Detail"
+                alt="Car detailing results in the Peace Region Alberta"
                 className="w-full h-full object-cover lg:grayscale lg:opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
               />
             </div>
@@ -290,7 +298,7 @@ const Home = () => {
             <div className="aspect-square bg-[#121212] border border-gray-800 hover:border-[#8B5CF6] transition-all overflow-hidden group">
               <img
                 src={project1Img4}
-                alt="Before and After Detail"
+                alt="Truck polishing and detailing service in Grande Prairie"
                 className="w-full h-full object-cover lg:grayscale lg:opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
               />
             </div>
