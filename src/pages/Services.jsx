@@ -208,6 +208,11 @@ const Services = () => {
                             </ul>
                         </div>
                     </div>
+                    <div className="text-center mt-12">
+                        <a href="/ceramic" className="btn-primary" style={{ display: 'inline-block' }}>
+                            EXPLORE CERAMIC COATING →
+                        </a>
+                    </div>
                 </div>
             </section>
 
